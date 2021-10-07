@@ -1,0 +1,5 @@
+ngx_addon_name=nginx_http_mytest_module 
+
+HTTP_MODULES="$HTTP_MODULES nginx_http_mytest_module"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/nginx_http_mytest_module.c"
+
