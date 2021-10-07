@@ -8,7 +8,7 @@
 
    1. 透過Configure新增此模組:
       ```
-           動態模組: ./configure (...) --add-dynamic-module=/path/to/nginx-http-mytest-module
+      動態模組: ./configure (...) --add-dynamic-module=/path/to/nginx-http-mytest-module
       ```
    2. 執行此命令 `make`
    3. 開始使用此模組，指令為 `mytest`
@@ -16,11 +16,11 @@
       ```
       Example:
           
-          location = /test {
-             
-            mytest;
-          
-          }
+         location = /test {
+            
+         mytest;
+         
+         }
       ```
 
 ## Http框架筆記
