@@ -1,4 +1,4 @@
-# mytest Module for Nginx
+# mytest module for Nginx
 
 ## 說明
 
@@ -7,12 +7,15 @@
 ## 安裝
 
    1. 透過Configure新增此模組:
-         動態模組: ./configure (...) --add-dynamic-module=/path/to/nginx-http-mytest-module
-       
+      > 
+      >     動態模組: ./configure (...) --add-dynamic-module=/path/to/nginx-http-mytest-module
+      >     
+      
    2. 執行此命令 `make`.
    
    3. 開始使用此模組，指令為 `mytest`
       
+      ```
       Example:
           
           location = /test {
@@ -20,11 +23,11 @@
             mytest;
           
           }
-          
-## 相關筆記
+      ```
+
+## Http框架筆記
 
 HTTP框架共有11階段，第三方只能介入其中7個階段處理請求。
-
 ```
 typedef enum{
    在接收到完整的HTTP頭部後處理的HTTP階段
