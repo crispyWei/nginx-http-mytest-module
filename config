@@ -1,5 +1,12 @@
-ngx_addon_name=nginx_http_mytest_module 
+ngx_addon_name=nginx_http_mytest_module #Configure執行時對應名稱
 
-HTTP_MODULES="$HTTP_MODULES nginx_http_mytest_module"
-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/nginx_http_mytest_module.c"
-
+# 是否支援動態模組
+if test -n "$ngx_module_link"; then
+  ngx_module_type=HTTP
+  ngx_module_name=nginx_http_mytest_module #模組名稱對應nginx_http_mytest_module.c內的命名
+  ngx_module_srcs="$ngx_addon_dir/nginx_http_mytest_module.c" #模組來源列表
+  . auto/module
+else
+	HTTP_MODULES="$HTTP_MODULES nginx_http_mytest_module"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/nginx_http_mytest_module.c"
+fi
